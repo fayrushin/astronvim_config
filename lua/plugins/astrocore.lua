@@ -1,9 +1,5 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
--- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
---       as this provides autocomplete and documentation while editing
 
 ---@type LazySpec
 return {
@@ -12,7 +8,7 @@ return {
   opts = {
     -- Configure core features of AstroNvim
     features = {
-      large_buf = { size = 1024 * 500, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
+      large_buf = { size = 1024 * 1000, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
       autopairs = true, -- enable autopairs at start
       cmp = true, -- enable completion at start
       diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
@@ -32,6 +28,7 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
         wrap = false, -- sets vim.opt.wrap
+        clipboard = "",
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -44,6 +41,15 @@ return {
     mappings = {
       -- first key is the mode
       n = {
+        ["<Leader>gd"] = { "<cmd>DiffviewOpen<cr>", desc = "View git diff" },
+        ["<Leader>gq"] = { "<cmd>DiffviewClose<cr>", desc = "Close git diff" },
+        ["<Leader>gh"] = { "<cmd>DiffviewFileHistory<cr>", desc = "View file history" },
+        ["<Leader>gf"] = { "<cmd>DiffviewToggleFiles<cr>", desc = "Toggle files bar" },
+        ["<Leader>gr"] = { "<cmd>Gitsigns reset_hunk<cr>", desc = "Reset git hunk" },
+        ["<Leader>gR"] = { "<cmd>Gitsigns reset_buffer<cr>", desc = "Reset git buffer" },
+        ["<Leader>gj"] = { "<cmd>Gitsigns next_hunk<cr>", desc = "Next hunk" },
+        ["<Leader>gk"] = { "<cmd>Gitsigns prev_hunk<cr>", desc = "Previous hunk" },
+
         -- second key is the lefthand side of the map
 
         -- navigate buffer tabs with `H` and `L`
