@@ -50,32 +50,14 @@ return {
         ["<Leader>gj"] = { "<cmd>Gitsigns next_hunk<cr>", desc = "Next hunk" },
         ["<Leader>gk"] = { "<cmd>Gitsigns prev_hunk<cr>", desc = "Previous hunk" },
 
-        -- second key is the lefthand side of the map
-
-        -- navigate buffer tabs with `H` and `L`
-        -- L = {
-        --   function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-        --   desc = "Next buffer",
-        -- },
-        -- H = {
-        --   function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-        --   desc = "Previous buffer",
-        -- },
-
-        -- mappings seen under group name "Buffer"
-        ["<Leader>bD"] = {
-          function()
-            require("astroui.status.heirline").buffer_picker(
-              function(bufnr) require("astrocore.buffer").close(bufnr) end
-            )
-          end,
-          desc = "Pick to close",
-        },
-        -- tables with just a `desc` key will be registered with which-key if it's installed
-        -- this is useful for naming menus
-        ["<Leader>b"] = { desc = "Buffers" },
-        -- quick save
-        -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+        ["<leader>lt"] = { "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Toggle source/header" },
+        ["<A-k>"] = { "<cmd>m .-2<CR>", desc = "move line up" },
+        ["<A-j>"] = { "<cmd>m .+1<CR>", desc = "move line down" },
+      },
+      v = {
+        -- move line up/down
+        ["<A-j>"] = { ":m '>+1<cr>gv=gv" },
+        ["<A-k>"] = { ":m '<-2<cr>gv=gv" },
       },
       t = {
         -- setting a mapping to false will disable it
