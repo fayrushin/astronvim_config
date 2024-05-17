@@ -8,11 +8,11 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.cmake" },
   { import = "astrocommunity.pack.python" },
-  { import = "astrocommunity.motion.flash-nvim" },
+  -- { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.colorscheme.nightfox-nvim" },
   { import = "astrocommunity.recipes.heirline-vscode-winbar" },
-  -- { import = "astrocommunity/recipes/heirline-nvchad-statusline" },
-  -- { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
+  { import = "astrocommunity.editing-support.suda-vim"},
+  {import = "astrocommunity.git.diffview-nvim"}
 
   -- import/override with your plugins folder
 }
