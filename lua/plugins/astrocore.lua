@@ -47,9 +47,6 @@ return {
         ["<Leader>gf"] = { "<cmd>DiffviewToggleFiles<cr>", desc = "Toggle files bar" },
         ["<Leader>gr"] = { "<cmd>Gitsigns reset_hunk<cr>", desc = "Reset git hunk" },
         ["<Leader>gR"] = { "<cmd>Gitsigns reset_buffer<cr>", desc = "Reset git buffer" },
-        -- ["<Leader>gj"] = { "<cmd>Gitsigns next_hunk<cr>", desc = "Next hunk" },
-        -- ["<Leader>gk"] = { "<cmd>Gitsigns prev_hunk<cr>", desc = "Previous hunk" },
-
         ["<leader>lt"] = { "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Toggle source/header" },
         ["<A-k>"] = { "<cmd>m .-2<CR>", desc = "move line up" },
         ["<A-j>"] = { "<cmd>m .+1<CR>", desc = "move line down" },

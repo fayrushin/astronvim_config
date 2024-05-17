@@ -12,7 +12,4 @@ return {
   { import = "astrocommunity.colorscheme.nightfox-nvim" },
   { import = "astrocommunity.recipes.heirline-vscode-winbar" },
   { import = "astrocommunity.editing-support.suda-vim"},
-  {import = "astrocommunity.git.diffview-nvim"}
-
-  -- import/override with your plugins folder
 }

@@ -32,11 +32,6 @@ return {
       },
     },
   },
-  -- {
-  --   "sindrets/diffview.nvim",
-  --   event = "User AstroFile",
-  --   cmd = "DiffviewOpen",
-  -- },
   {
     "Exafunction/codeium.vim",
     config = function()
@@ -99,6 +94,33 @@ return {
             },
           },
         },
+      },
+    },
+  },
+  {
+    "sindrets/diffview.nvim",
+    event = "User AstroGitFile",
+    cmd = { "DiffviewOpen" },
+    opts = {
+      -- enhanced_diff_hl = true,
+      view = {
+        default = { winbar_info = true },
+        file_history = { winbar_info = true },
+      },
+      hooks = {
+        diff_buf_read = function(bufnr)
+          -- Change local options in diff buffers
+          vim.b[bufnr].view_activated = false
+          vim.opt_local.wrap = false
+          vim.opt_local.list = false
+          vim.opt_local.relativenumber = false          
+        end,
+        view_enter = function()
+          require("ibl").update({ enabled = false })
+        end,
+        view_leave = function()
+          require("ibl").update({ enabled = true })
+        end,
       },
     },
   },
