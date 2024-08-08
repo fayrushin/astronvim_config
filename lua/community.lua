@@ -5,11 +5,9 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.pack.cmake" },
-  { import = "astrocommunity.pack.python" },
   -- { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.colorscheme.nightfox-nvim" },
   { import = "astrocommunity.recipes.heirline-vscode-winbar" },
   { import = "astrocommunity.editing-support.suda-vim"},
+  {import = 'astrocommunity.completion.codeium-nvim'},
 }
